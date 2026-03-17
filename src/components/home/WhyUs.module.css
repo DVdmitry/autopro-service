@@ -1,0 +1,90 @@
+.section {
+  position: relative;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Faded workshop background image */
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background: url('/images/workshop.jpg') center/cover no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+}
+
+.left {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-xl));
+  align-self: start;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.reason {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.reason:hover {
+  background: var(--glass-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateX(8px);
+  box-shadow: -4px 0 24px rgba(255, 68, 5, 0.06);
+}
+
+.num {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.25;
+}
+
+.reasonTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.reasonDesc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-4xl);
+  }
+
+  .num {
+    font-size: 3.5rem;
+  }
+}

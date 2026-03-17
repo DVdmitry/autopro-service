@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(lsof:*)",
+      "Bash(sleep:*)",
+      "WebSearch",
+      "WebFetch(domain:www.theedigital.com)",
+      "WebFetch(domain:writerdock.in)",
+      "WebFetch(domain:zetamatic.com)",
+      "WebFetch(domain:www.haddingtoncreative.com)",
+      "Bash(curl:*)",
+      "Bash(open:*)"
+    ]
+  }
+}

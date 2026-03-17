@@ -1,0 +1,108 @@
+.section {
+  padding: var(--space-xl) 0 var(--space-4xl);
+}
+
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Step progress bar ── */
+.progress {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  scrollbar-width: none;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.progress::-webkit-scrollbar {
+  display: none;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-md) var(--space-sm);
+  min-width: 72px;
+  position: relative;
+  color: var(--text-muted);
+  transition: color var(--duration-fast);
+}
+
+.stepDone {
+  color: var(--text-secondary);
+}
+
+.stepCurrent {
+  color: var(--accent-1);
+}
+
+.stepCurrent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+}
+
+.stepIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: var(--glass);
+  border: 1.5px solid var(--glass-border);
+  transition: all var(--duration-fast);
+}
+
+.stepDone .stepIcon {
+  background: rgba(255, 68, 5, 0.1);
+  border-color: rgba(255, 68, 5, 0.2);
+}
+
+.stepCurrent .stepIcon {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(255, 68, 5, 0.3);
+}
+
+.stepLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.content {
+  padding: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: var(--space-2xl) var(--space-3xl);
+  }
+
+  .stepIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}

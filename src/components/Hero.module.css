@@ -1,0 +1,169 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 49px,
+      rgba(255, 255, 255, 0.03) 49px,
+      rgba(255, 255, 255, 0.03) 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 49px,
+      rgba(255, 255, 255, 0.03) 49px,
+      rgba(255, 255, 255, 0.03) 50px
+    );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 80px 20px 60px;
+  color: var(--white);
+}
+
+.logo {
+  display: inline-block;
+  font-family: var(--font-heading), 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 16px 36px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-heading), 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  transition: background var(--transition);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.btnPrimary:hover {
+  background: var(--red-hover);
+}
+
+.btnOutline {
+  display: inline-block;
+  padding: 16px 36px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  font-family: var(--font-heading), 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  transition: border-color var(--transition);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.btnOutline:hover {
+  border-color: var(--white);
+}
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.badgeValue {
+  font-family: var(--font-heading), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--red);
+}
+
+.badgeLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 120px 20px 80px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btnPrimary,
+  .btnOutline {
+    width: auto;
+  }
+
+  .badges {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 700px;
+  }
+}
